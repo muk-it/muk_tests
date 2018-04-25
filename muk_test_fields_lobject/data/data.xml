@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+	
+	<record id="dummy" model="muk_test_fields_lobject.dummy">	  
+	    <field name="content_fname">sample.png</field>  
+	    <field name="content" type="base64" file="muk_test_fields_lobject/data/files/sample.png"/>
+	</record>
+
+	</data>
+</odoo>
