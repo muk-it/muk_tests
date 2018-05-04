@@ -1,5 +1,3 @@
-# -*- coding: utf-8 -*-
-
 ###################################################################################
 # 
 #    Copyright (C) 2017 MuK IT GmbH
@@ -19,18 +17,15 @@
 #
 ###################################################################################
 
-import io
 import os
 import base64
 import logging
-import unittest
 
 from urllib.parse import urlunparse
 from urllib.parse import urlparse
 from urllib.parse import parse_qsl
 from urllib.parse import urlencode
 
-from odoo import _
 from odoo.tests import common
 
 _path = os.path.dirname(os.path.dirname(__file__))
@@ -100,6 +95,8 @@ class LargeObjectTestCase(common.HttpCase):
             filename="test",
             unique=True)
         self.assertEqual(status, 200)
+        self.assertTrue(headers)
+        self.assertTrue(content)
         
     def test_controller(self):
         self.authenticate('admin', 'admin')

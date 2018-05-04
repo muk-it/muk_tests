@@ -19,7 +19,7 @@
 
 import logging
 
-from odoo import api, models, fields
+from odoo import models, fields
 
 from odoo.addons.muk_fields_lobject.fields import LargeObject
 

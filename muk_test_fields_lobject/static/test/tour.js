@@ -32,7 +32,7 @@ var options = {
     test: true,
     url: '/web',
     wait_for: base.ready()
-}
+};
 
 var setps = [
 	{

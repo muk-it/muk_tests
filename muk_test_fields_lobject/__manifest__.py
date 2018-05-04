@@ -34,6 +34,7 @@
         "muk_web_preview_lobject",
     ],
     "data": [
+        "security/ir.model.access.csv",
         "template/assets.xml",
         "data/data.xml",
         "views/menu.xml",
