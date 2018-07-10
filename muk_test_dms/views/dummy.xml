@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--     
+	Copyright (C) 2018 MuK IT GmbH
+	
+    This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU Affero General Public License as
+    published by the Free Software Foundation, either version 3 of the
+    License, or (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU Affero General Public License for more details.
+
+    You should have received a copy of the GNU Affero General Public License
+    along with this program.  If not, see <http://www.gnu.org/licenses/>. 
+-->
+
+<odoo>
+
+ <record id="view_muk_test_fields_lobject_dummy_tree" model="ir.ui.view">
+    <field name="name">muk_test_dms_dummy.tree</field>
+    <field name="model">muk_test_dms.dummy</field>
+    <field name="arch" type="xml">
+        <tree string="Dummies">
+            <field name="id" />
+            <field name="content_fname" />
+            <field name="content" />
+            <field name="file" />
+        </tree>
+    </field>
+</record>
+
+<record id="view_muk_test_fields_lobject_dummy_from" model="ir.ui.view">
+    <field name="name">muk_test_dms_dummy.form</field>
+    <field name="model">muk_test_dms.dummy</field>
+    <field name="arch" type="xml">
+        <form string="Dummy">
+            <group>
+                <field name="id" />
+	            <field name="content_fname" />
+	            <field name="content" filename="content_fname" />
+           		<field name="file" />
+            </group>
+        </form>
+    </field>
+</record> 
+        
+<record id="action_muk_admin_logs" model="ir.actions.act_window">
+    <field name="name">Dummies</field>
+    <field name="res_model">muk_test_dms.dummy</field>
+    <field name="view_type">form</field>
+    <field name="view_mode">tree,form</field>
+</record>
+        
+<menuitem id="cat_menu_muk_test_fields_lobject" 
+	parent="main_menu_muk_test_fields_lobject"
+	action="action_muk_admin_logs" 
+	name="Dummy"/>
+
+</odoo>
