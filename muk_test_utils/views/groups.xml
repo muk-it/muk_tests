@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+
+    Copyright (c) 2017-2019 MuK IT GmbH.
+
+    This file is part of MuK Test Utils
+    (see https://mukit.at).
+
+    This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU Lesser General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU Lesser General Public License for more details.
+
+    You should have received a copy of the GNU Lesser General Public License
+    along with this program. If not, see <http://www.gnu.org/licenses/>.
+
+  -->
+
+<odoo>
+
+<record id="action_groups" model="ir.actions.act_window">
+	<field name="name">Groups</field>
+	<field name="res_model">muk_test_utils.groups</field>
+	<field name="view_mode">tree,form</field>
+	<field name="view_ids" eval="[(5, 0, 0),
+		(0, 0, {'view_mode': 'tree', 'view_id': ref('muk_utils.view_mixins_groups_tree')}),
+		(0, 0, {'view_mode': 'form', 'view_id': ref('muk_utils.view_mixins_groups_form')})]"/>
+</record>
+
+<menuitem id="menu_groups" name="Groups" parent="menu_test_utils" action="action_groups" />
+
+</odoo>

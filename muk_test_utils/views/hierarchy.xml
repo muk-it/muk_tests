@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+
+    Copyright (c) 2017-2019 MuK IT GmbH.
+
+    This file is part of MuK Test Utils
+    (see https://mukit.at).
+
+    This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU Lesser General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU Lesser General Public License for more details.
+
+    You should have received a copy of the GNU Lesser General Public License
+    along with this program. If not, see <http://www.gnu.org/licenses/>.
+
+  -->
+
+<odoo>
+
+<record id="view_hierarchy_restrict_tree" model="ir.ui.view">
+	<field name="name">muk_test_utils.hierarchy_restrict.tree</field>
+	<field name="model">muk_test_utils.hierarchy_restrict</field>
+	<field name="arch" type="xml">
+		<tree>
+			<field name="name" />
+			<field name="parent_id" />
+			<field name="child_ids" />
+			<field name="parent_path" />
+			<field name="parent_path_names" />
+		</tree>
+	</field>
+</record>
+
+<record id="view_hierarchy_restrict_form" model="ir.ui.view">
+	<field name="name">muk_test_utils.hierarchy_restrict.form</field>
+	<field name="model">muk_test_utils.hierarchy_restrict</field>
+	<field name="arch" type="xml">
+		<form>
+			<sheet>
+				<div class="oe_title">
+					<label for="name" class="oe_edit_only" />
+					<h1>
+						<field name="name" />
+					</h1>
+				</div>
+				<group name="group" string="Group">
+					<group>
+						<field name="parent_id" />
+					</group>
+					<group>
+						<field name="parent_path" />
+						<field name="parent_path_names" />
+					</group>
+				</group>
+				<notebook>
+					<page string="Childs">
+						<field name="child_ids" mode="tree" widget="one2many" />
+					</page>
+				</notebook>
+			</sheet>
+		</form>
+	</field>
+</record>
+
+<record id="view_hierarchy_sudo_tree" model="ir.ui.view">
+	<field name="name">muk_test_utils.hierarchy_sudo.tree</field>
+	<field name="model">muk_test_utils.hierarchy_sudo</field>
+	<field name="arch" type="xml">
+		<tree>
+			<field name="name" />
+			<field name="parent_id" />
+			<field name="child_ids" />
+			<field name="parent_path" />
+			<field name="parent_path_names" />
+		</tree>
+	</field>
+</record>
+
+<record id="view_hierarchy_sudo_form" model="ir.ui.view">
+	<field name="name">muk_test_utils.hierarchy_sudo.form</field>
+	<field name="model">muk_test_utils.hierarchy_sudo</field>
+	<field name="arch" type="xml">
+		<form>
+			<sheet>
+				<div class="oe_title">
+					<label for="name" class="oe_edit_only" />
+					<h1>
+						<field name="name" />
+					</h1>
+				</div>
+				<group name="group" string="Group">
+					<group>
+						<field name="parent_id" />
+					</group>
+					<group>
+						<field name="parent_path" />
+						<field name="parent_path_names" />
+					</group>
+				</group>
+				<notebook>
+					<page string="Childs">
+						<field name="child_ids" mode="tree" widget="one2many" />
+					</page>
+				</notebook>
+			</sheet>
+		</form>
+	</field>
+</record>
+
+<record id="action_hierarchy_restrict" model="ir.actions.act_window">
+	<field name="name">Hierarchy Restrict</field>
+	<field name="res_model">muk_test_utils.hierarchy_restrict</field>
+	<field name="view_mode">tree,form</field>
+</record>
+
+<record id="action_hierarchy_sudo" model="ir.actions.act_window">
+	<field name="name">Hierarchy Sudo</field>
+	<field name="res_model">muk_test_utils.hierarchy_sudo</field>
+	<field name="view_mode">tree,form</field>
+</record>
+
+<menuitem id="menu_hierarchy_restrict" name="Hierarchy Restrict"
+	parent="menu_test_utils" action="action_hierarchy_restrict" />
+<menuitem id="menu_hierarchy_sudo" name="Hierarchy Sudo"
+	parent="menu_test_utils" action="action_hierarchy_sudo" />
+
+</odoo>

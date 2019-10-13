@@ -1,0 +1,3 @@
+id,name,explicit_users/id,groups/id,parent_group/id
+muk_test_utils_groups_1,Root,base.user_admin,base.group_portal,
+muk_test_utils_groups_2,Child,base.user_demo,,muk_test_utils_groups_1

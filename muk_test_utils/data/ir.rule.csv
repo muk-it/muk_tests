@@ -1,0 +1,3 @@
+id,name,model_id/id,groups,domain_force,perm_read,perm_write,perm_create,perm_unlink
+ir_rule_restrict,Hierarchy Restrict,muk_test_utils.model_muk_test_utils_hierarchy_restrict,,"[('name','!=','Root_01')]",True,,,
+ir_rule_sudo,Hierarchy Sudo,muk_test_utils.model_muk_test_utils_hierarchy_sudo,,"[('name','!=','Root_01')]",True,,,

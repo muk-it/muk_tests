@@ -1,0 +1,5 @@
+id,name,model_id/id,group_id/id,perm_read,perm_write,perm_create,perm_unlink
+
+access_utils_groups,access_utils_groups,model_muk_test_utils_groups,base.group_user,1,1,1,1
+access_utils_hierarchy_restrict,access_utils_hierarchy_restrict,model_muk_test_utils_hierarchy_restrict,base.group_user,1,1,1,1
+access_utils_hierarchy_sudo,access_utils_hierarchy_sudo,model_muk_test_utils_hierarchy_sudo,base.group_user,1,1,1,1
